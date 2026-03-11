@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1반 뮤직 데이타베이스 분석</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pretendard:wght@400;600;800&display=swap');
+        body { font-family: 'Pretendard', sans-serif; background-color: #0f172a; color: #f8fafc; }
+        .glass-card { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .gradient-text { background: linear-gradient(90deg, #38bdf8, #818cf8); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+    </style>
+</head>
+<body class="p-4 md:p-8 min-h-screen">
+    <div class="max-w-5xl mx-auto">
+        <!-- Header -->
+        <header class="mb-10 text-center">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-2 gradient-text">MUSIC DATABASE</h1>
+            <p class="text-slate-400">1반 학생들이 추천한 33곡의 음악 데이터 시각화 리포트</p>
+        </header>
+
+        <!-- Stats Overview -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                <div class="bg-blue-500/20 p-4 rounded-xl text-blue-400">
+                    <i class="fas fa-music text-2xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400">총 등록 곡 수</p>
+                    <p class="text-2xl font-bold">33곡</p>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                <div class="bg-purple-500/20 p-4 rounded-xl text-purple-400">
+                    <i class="fas fa-user-astronaut text-2xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400">참여 아티스트</p>
+                    <p class="text-2xl font-bold">29명</p>
+                </div>
+            </div>
+            <div class="glass-card p-6 rounded-2xl flex items-center space-x-4">
+                <div class="bg-pink-500/20 p-4 rounded-xl text-pink-400">
+                    <i class="fas fa-chart-line text-2xl"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-slate-400">데이터 완성도</p>
+                    <p class="text-2xl font-bold">100%</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Charts Section (Infographic) -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
+            <!-- Genre/Vibe Analysis -->
+            <div class="glass-card p-8 rounded-3xl">
+                <h3 class="text-xl font-bold mb-6 flex items-center">
+                    <span class="w-2 h-6 bg-blue-500 rounded-full mr-3"></span>
+                    주요 키워드 분석
+                </h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span>댄스 & 아이돌</span>
+                            <span>42%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-blue-500 h-2 rounded-full" style="width: 42%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span>발라드 & 감성</span>
+                            <span>35%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-purple-500 h-2 rounded-full" style="width: 35%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1 text-sm">
+                            <span>밴드 & 락</span>
+                            <span>23%</span>
+                        </div>
+                        <div class="w-full bg-slate-700 rounded-full h-2">
+                            <div class="bg-pink-500 h-2 rounded-full" style="width: 23%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-8 grid grid-cols-2 gap-4">
+                    <div class="text-center p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                        <p class="text-xs text-slate-400">가장 많이 등장한 이름</p>
+                        <p class="text-lg font-bold">아이유 / DAY6</p>
+                    </div>
+                    <div class="text-center p-4 bg-slate-800/50 rounded-xl border border-slate-700">
+                        <p class="text-xs text-slate-400">최신 트렌드 비중</p>
+                        <p class="text-lg font-bold">매우 높음</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Visualization Decorator -->
+            <div class="glass-card p-8 rounded-3xl flex flex-col justify-center items-center relative overflow-hidden">
+                <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-500/10 rounded-full blur-3xl"></div>
+                <div class="z-10 text-center">
+                    <i class="fas fa-compact-disc fa-spin text-6xl text-blue-400 mb-4" style="animation-duration: 5s;"></i>
+                    <h4 class="text-2xl font-bold mb-2">데이터 요약</h4>
+                    <p class="text-slate-400 leading-relaxed">
+                        1반 음악 데이터베이스는 <br>
+                        감성적인 발라드부터 에너제틱한 <br>
+                        밴드 음악까지 폭넓은 취향을 <br>
+                        보여주고 있습니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music List (Top 5 by Popularity) -->
+        <section>
+            <h3 class="text-2xl font-bold mb-6 flex items-center">
+                <i class="fas fa-fire text-orange-500 mr-3"></i>
+                인기 뮤직 리스트 (TOP 5)
+            </h3>
+            <div class="space-y-4">
+                <!-- Ranked Item 1 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-between hover:bg-slate-800/80 transition-all cursor-pointer group">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl font-black italic text-slate-700 group-hover:text-blue-500 transition-colors">01</span>
+                        <div>
+                            <p class="font-bold text-lg">나의 옛날이야기</p>
+                            <p class="text-sm text-slate-400">아이유 (IU)</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/EZUWqZ0d3OI" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold flex items-center transition-colors">
+                        <i class="fab fa-youtube mr-2 text-red-500"></i> 감상하기
+                    </a>
+                </div>
+
+                <!-- Ranked Item 2 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-between hover:bg-slate-800/80 transition-all cursor-pointer group">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl font-black italic text-slate-700 group-hover:text-blue-500 transition-colors">02</span>
+                        <div>
+                            <p class="font-bold text-lg">사랑은 늘 도망가</p>
+                            <p class="text-sm text-slate-400">임영웅</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/pVC1DU_IPlQ" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                        <i class="fab fa-youtube mr-2 text-red-500"></i> 감상하기
+                    </a>
+                </div>
+
+                <!-- Ranked Item 3 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-between hover:bg-slate-800/80 transition-all cursor-pointer group">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl font-black italic text-slate-700 group-hover:text-blue-500 transition-colors">03</span>
+                        <div>
+                            <p class="font-bold text-lg">Welcome to the Show</p>
+                            <p class="text-sm text-slate-400">DAY6 (데이식스)</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/0-X7S8H9X-4" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                        <i class="fab fa-youtube mr-2 text-red-500"></i> 감상하기
+                    </a>
+                </div>
+
+                <!-- Ranked Item 4 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-between hover:bg-slate-800/80 transition-all cursor-pointer group">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl font-black italic text-slate-700 group-hover:text-blue-500 transition-colors">04</span>
+                        <div>
+                            <p class="font-bold text-lg">내일에서 기다릴게</p>
+                            <p class="text-sm text-slate-400">투모로우바이투게더</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/MtDeVpVzLhY" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                        <i class="fab fa-youtube mr-2 text-red-500"></i> 감상하기
+                    </a>
+                </div>
+
+                <!-- Ranked Item 5 -->
+                <div class="glass-card p-4 rounded-2xl flex items-center justify-between hover:bg-slate-800/80 transition-all cursor-pointer group">
+                    <div class="flex items-center space-x-4">
+                        <span class="text-3xl font-black italic text-slate-700 group-hover:text-blue-500 transition-colors">05</span>
+                        <div>
+                            <p class="font-bold text-lg">고민중독</p>
+                            <p class="text-sm text-slate-400">QWER</p>
+                        </div>
+                    </div>
+                    <a href="https://youtu.be/K6S8rB89e8o" target="_blank" class="bg-blue-600 hover:bg-blue-500 px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                        <i class="fab fa-youtube mr-2 text-red-500"></i> 감상하기
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-20 text-center pb-10">
+            <p class="text-slate-500 text-sm">© 2026 Class 1 Music DB Analysis Project</p>
+        </footer>
+    </div>
+</body>
+</html>
